@@ -1,7 +1,7 @@
 {
   "name": "hephaestus",
   "version": "1.0.0",
-  "description": "A simple fitness web app.",
+  "description": "A simple project",
   "main": "index.html",
   "dependencies": {},
   "devDependencies": {
