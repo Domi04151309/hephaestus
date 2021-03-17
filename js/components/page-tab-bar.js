@@ -9,12 +9,12 @@ export default {
       tabs: [
         {
           icon: 'explore',
-          title: 'Explore',
+          title: 'Erkunden',
           url: '/explore'
         },
         {
           icon: 'favorite',
-          title: 'Favorites',
+          title: 'Favoriten',
           url: '/favorites'
         },
         {

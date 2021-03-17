@@ -6,13 +6,13 @@ export default {
   name: 'help',
   data() {
     return {
-      title: 'Help'
+      title: 'Hilfe'
     }
   },
   template:
   `<page :title="title" parent="/account">
     <div class="card mb-16-p-16 intro text-center">
-      <h2>Coming soon...</h2>
+      <h2>Bald verfügbar...</h2>
     </div>
   </page>`,
   components: {

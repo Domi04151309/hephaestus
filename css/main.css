@@ -645,68 +645,22 @@ footer .router-link-active {
   padding: 8px;
 }
 
-/* setup */
-.setup-image {
-  position: absolute;
-  clip-path: ellipse(125vw 50vh at 100% 0);
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50vh;
-  background: #000 center/cover no-repeat;
-  z-index: -1;
+/* details */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0 0 16px 0;
 }
-.setup-image.welcome {
-  background-image: url('../images/setup/welcome.jpg');
-}
-.setup-image.info {
-  background-image: url('../images/setup/info.jpg');
-}
-.setup-image.finish {
-  background-image: url('../images/setup/finish.jpg');
-}
-.setup-text {
-  margin: auto;
-  margin-top: 50vh;
-  margin-bottom: 32px;
-  text-align: center;
-}
-.setup-input {
-  width: 75%;
-  text-align: center;
-  border-radius: var(--border-radius-4x);
-}
-
-/* calendar */
-#calendar button {
-  padding: 12px;
-  background: none;
-  box-shadow: none;
-  color: var(--text-color-secondary);
-}
-#calendar button:hover {
-  background: var(--hover-color);
-}
-#calendar button:active {
-  background: var(--pressed-color);
-}
-#calendar .controls {
-  float: right;
-}
-#calendar .controls button {
-  margin: 0;
-  padding: 8px 12px;
-}
-#calendar .today {
-  background: var(--accent-color-alpha);
-  color: var(--accent-color);
+.actions > li {
+  display: block;
+  list-style-image: none;
+  padding: 16px;
 }
 
 /* exercises */
-.card.exercise {
-  height: calc(33vh - 48px);
-  max-height: 256px;
-}
 div.large-app-bar {
   background: #000;
 }
@@ -719,16 +673,8 @@ h2.large-app-bar {
   text-align: center;
   z-index: 0;
 }
-div.large-app-bar.exercises > h2 {
-  background: var(--background-dim), url('../images/exercises/hiking.jpg') no-repeat center;
-  background-size: cover;
-}
-div.large-app-bar.healthy > h2 {
-  background: var(--background-dim), url('../images/food/healthy.jpg') no-repeat center;
-  background-size: cover;
-}
-div.large-app-bar.casual > h2 {
-  background: var(--background-dim), url('../images/food/casual.jpg') no-repeat center;
+div.large-app-bar.details > h2 {
+  background: var(--background-dim), url('../images/explore/1.jpg') no-repeat center;
   background-size: cover;
 }
 main.large-app-bar {
@@ -749,10 +695,6 @@ main.large-app-bar {
   color: var(--accent-color);
   font-size: 72px;
   align-self: center;
-}
-.item-caption {
-  display: block;
-  margin-bottom: -4px;
 }
 
 /* loading screen */
@@ -804,13 +746,6 @@ main.large-app-bar {
 @keyframes wave {
   from {transform: translateY(-100%);}
   to {transform: translateY(100%);}
-}
-
-/* radial progress bar */
-circle {
-  transition: stroke-dashoffset 0.35s;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
 }
 
 /* media query */

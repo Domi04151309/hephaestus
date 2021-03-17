@@ -6,12 +6,12 @@ export default {
   `<div class="modal-container">
     <div class="modal-background" v-on:click="close()"></div>
     <div class="modal-content card">
-      <h2>Change Theme</h2>
-      <p>Switch to a theme you prefer</p>
+      <h2>Thema ändern</h2>
+      <p>Wechsle das Thema der App</p>
       <div class="flex space">
         <button v-on:click="setTheme('auto')" type="button">Auto</button>
-        <button v-on:click="setTheme('light')" type="button">Light</button>
-        <button v-on:click="setTheme('dark')" type="button">Dark</button>
+        <button v-on:click="setTheme('light')" type="button">Hell</button>
+        <button v-on:click="setTheme('dark')" type="button">Dunkel</button>
       </div>
       <div class="button-bar">
         <button v-on:click="close()" type="button">Ok</button>

@@ -1,12 +1,14 @@
-import PageTabBar from '../../components/page-tab-bar.js'
+import Page from '../components/page.js'
 
-//TODO: Dynamically generate content
+//TODO: Add content
 
 export default {
-  name: 'favorites',
+  name: 'search',
   data() {
     return {
+      title: 'Suche',
       searchString: '',
+      sorting: 'a',
       generalSuggestions: [
         { title: 'Shop 1', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' },
         { title: 'Shop 2', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' },
@@ -15,10 +17,14 @@ export default {
     }
   },
   template:
-  `<page-tab-bar>
-    <h2 class="mt-16 mx-8 secondary-title">Favoriten</h2>
-    <p class="mt-0 mb-48 mx-8">Speichere Läden, die du magst, für später!</p>
+  `<page :title="title" parent="/explore">
     <input v-model="searchString" class="card mb-16" type="text" placeholder="Suchen" autocomplete="off">
+    <div class="mb-16">
+      <input type="radio" id="categoryA" value="a" v-model="sorting">
+      <label class="mr-8" for="categoryA">Kategorie A</label>
+      <input type="radio" id="categoryB" value="b" v-model="sorting">
+      <label for="categoryB">Kategorie B</label>
+    </div>
     <router-link v-for="item in generalSuggestions" :key="item.title" to="/shop" class="card mb-16-p-16">
       <div class="flex center">
         <div class="material-icons-round big-c-icon">{{ item.logo }}</div>
@@ -28,8 +34,8 @@ export default {
         </div>
       </div>
     </router-link>
-  </page-tab-bar>`,
+  </page>`,
   components: {
-      PageTabBar
+      Page
   }
 }

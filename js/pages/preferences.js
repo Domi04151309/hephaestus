@@ -8,15 +8,15 @@ export default {
   name: 'preferences',
   data() {
     return {
-      title: 'Preferences'
+      title: 'Einstellungen'
     }
   },
   template:
   `<page :title="title" parent="/account">
     <ul class="link-list ignore-page-padding">
-      <li v-on:click="changeTheme()"><span><span class="material-icons-round">palette</span>Change theme</span></li>
-      <li v-on:click="deleteData()"><span><span class="material-icons-round">delete</span>Delete data</span></li>
-      <li v-on:click="clearCache()"><span><span class="material-icons-round">delete</span>Clear cache</span></li>
+      <li v-on:click="changeTheme()"><span><span class="material-icons-round">palette</span>Thema ändern</span></li>
+      <li v-on:click="deleteData()"><span><span class="material-icons-round">delete</span>Daten Löschen</span></li>
+      <li v-on:click="clearCache()"><span><span class="material-icons-round">delete</span>Cache leeren</span></li>
     </ul>
   </page>`,
   components: {
@@ -33,9 +33,9 @@ export default {
       var ComponentClass = Vue.extend(Modal)
       var instance = new ComponentClass({
         propsData: {
-          title: 'Delete Data',
-          message: 'Are you sure you want to delete your data? This cannot be undone.',
-          positiveText: 'Delete',
+          title: 'Daten löschen',
+          message: 'Bist du dir sicher, dass du alle Daten löschen möchtest? Dieser Schritt kann nicht rückgängig gemacht werden.',
+          positiveText: 'Löschen',
           positiveFunction: () => {
             localStorage.clear()
             location.reload()
@@ -49,9 +49,9 @@ export default {
       var ComponentClass = Vue.extend(Modal)
       var instance = new ComponentClass({
         propsData: {
-          title: 'Clear Cache',
-          message: 'Are you sure you want to clear your cache? This cannot be undone.',
-          positiveText: 'Clear',
+          title: 'Cache leeren',
+          message: 'Bist du dir sicher, dass du den Cache leeren möchtest? Dieser Schritt kann nicht rückgängig gemacht werden.',
+          positiveText: 'Leeren',
           positiveFunction: () => {
             caches.keys().then(names => {
               for (const name of names) caches.delete(name)

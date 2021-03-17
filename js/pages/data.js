@@ -7,7 +7,7 @@ export default {
   name: 'data',
   data() {
     return {
-      title: 'Raw Data',
+      title: 'Rohdaten',
       storage: []
     }
   },
@@ -30,9 +30,9 @@ export default {
       var ComponentClass = Vue.extend(Modal)
       var instance = new ComponentClass({
         propsData: {
-          title: 'Delete Entry',
-          message: 'Are you sure you want to delete this entry? This cannot be undone.',
-          positiveText: 'Delete',
+          title: 'Eintrag löschen',
+          message: 'Bist du dir sicher, dass du diesen Eintrag löschen möchtest? Dieser Schritt kann nicht rückgängig gemacht werden.',
+          positiveText: 'Löschen',
           positiveFunction: () => {
             localStorage.removeItem(key)
             this.loadEntries()

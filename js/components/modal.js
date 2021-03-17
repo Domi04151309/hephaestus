@@ -9,7 +9,7 @@ export default {
     },
     negativeText: {
       type: String,
-      default: 'Cancel'
+      default: 'Abbrechen'
     },
     positiveFunction: {
       type: Function,

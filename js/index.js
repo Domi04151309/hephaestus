@@ -4,6 +4,9 @@ const Explore = () => import('./pages/main/explore.js')
 const Favorites = () => import('./pages/main/favorites.js')
 const Account = () => import('./pages/main/account.js')
 
+const Search = () => import('./pages/search.js')
+const ShopDetails = () => import('./pages/shop-details.js')
+
 const Preferences = () => import('./pages/preferences.js')
 const Data = () => import('./pages/data.js')
 const Help = () => import('./pages/help.js')
@@ -15,6 +18,8 @@ const routes = [
   { path: '*', redirect: '/explore' },
   { path: '/explore', component: Explore },
   { path: '/favorites', component: Favorites },
+  { path: '/search', component: Search },
+  { path: '/shop', component: ShopDetails },
   { path: '/account', component: Account },
   { path: '/account/preferences', component: Preferences },
   { path: '/account/data', component: Data },

@@ -4,8 +4,8 @@ export default {
   name: 'about',
   data() {
     return {
-      title: 'About',
-      version: 'unknown'
+      title: 'Über die App',
+      version: 'unbekannt'
     }
   },
   template:
@@ -14,7 +14,7 @@ export default {
     <h2>Hephaestus</h2>
     <p>{{ version }}</p>
     <p>
-      A simple project<br>
+      Ein simples Projekt<br>
     </p>
     <p>Copyright 2021<br>Domi04151309 & Nils Döhring</p>
   </page>`,
