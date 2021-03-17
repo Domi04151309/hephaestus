@@ -12,7 +12,10 @@ export default {
       generalSuggestions: [
         { title: 'Shop 1', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' },
         { title: 'Shop 2', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' },
-        { title: 'Shop 3', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' }
+        { title: 'Shop 3', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' },
+        { title: 'Shop 4', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' },
+        { title: 'Shop 5', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' },
+        { title: 'Shop 6', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' }
       ]
     }
   },

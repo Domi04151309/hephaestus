@@ -27,7 +27,7 @@ export default {
         </div>
       </div>
     </router-link>
-    <router-link to="" class="card mb-16-p-16">
+    <router-link to="/categories" class="card mb-16-p-16">
       <div class="flex center">
         <div class="material-icons-round big-c-icon">explore</div>
         <div>
@@ -38,7 +38,7 @@ export default {
     </router-link>
     <h2 class="mx-8 mt-48 mb-24">Gemeinden finden</h2>
     <div class="grid-1-3 gap-16 mb-16">
-      <list-item-image v-for="item in generalSuggestions" :key="item.title" :title="item.title" :image="item.img"></food-list-item-image>
+      <list-item-image v-for="item in generalSuggestions" :key="item.title" :title="item.title" :image="item.img" link="/location"></food-list-item-image>
     </div>
   </page-tab-bar>`,
   components: {

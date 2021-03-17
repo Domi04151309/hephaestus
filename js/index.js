@@ -5,6 +5,9 @@ const Favorites = () => import('./pages/main/favorites.js')
 const Account = () => import('./pages/main/account.js')
 
 const Search = () => import('./pages/search.js')
+const Categories = () => import('./pages/categories.js')
+const Category = () => import('./pages/category.js')
+const Location = () => import('./pages/location.js')
 const ShopDetails = () => import('./pages/shop-details.js')
 
 const Preferences = () => import('./pages/preferences.js')
@@ -19,6 +22,9 @@ const routes = [
   { path: '/explore', component: Explore },
   { path: '/favorites', component: Favorites },
   { path: '/search', component: Search },
+  { path: '/categories', component: Categories },
+  { path: '/category', component: Category },
+  { path: '/location', component: Location },
   { path: '/shop', component: ShopDetails },
   { path: '/account', component: Account },
   { path: '/account/preferences', component: Preferences },

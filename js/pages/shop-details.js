@@ -12,10 +12,22 @@ export default {
   template:
   `<page :title="title" parent="/explore" class="details">
     <ul class="actions">
-      <li>Anrufen</li>
-      <li>E-Mail</li>
-      <li>Route</li>
-      <li>Website</li>
+      <li>
+        <div class="material-icons-round big">phone</div>
+        <div class="p">Anrufen</div>
+      </li>
+      <li>
+        <div class="material-icons-round big">mail</div>
+        <div class="p">E-Mail</div>
+      </li>
+      <li>
+        <div class="material-icons-round big">navigation</div>
+        <div class="p">Route</div>
+      </li>
+      <li>
+        <div class="material-icons-round big">public</div>
+        <div class="p">Website</div>
+      </li>
     </ul>
     <div class="card mb-16-p-16">
       <h2>Beschreibung</h2>
