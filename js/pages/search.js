@@ -1,5 +1,7 @@
 import Page from '../components/page.js'
 
+//import DataHelper from '../helpers/data.js'
+
 //TODO: Add content
 
 export default {
@@ -9,15 +11,12 @@ export default {
       title: 'Suche',
       searchString: '',
       sorting: 'a',
-      generalSuggestions: [
-        { title: 'Shop 1', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' },
-        { title: 'Shop 2', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' },
-        { title: 'Shop 3', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' },
-        { title: 'Shop 4', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' },
-        { title: 'Shop 5', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' },
-        { title: 'Shop 6', summary: 'Eine kleine Zusammenfassung', logo: 'storefront' }
-      ]
+      items: []
     }
+  },
+  watch: {
+    searchString() { this.sort() },
+    sorting() { this.sort() }
   },
   template:
   `<page :title="title" parent="/explore">
@@ -28,17 +27,32 @@ export default {
       <input type="radio" id="categoryB" value="b" v-model="sorting">
       <label for="categoryB">Kategorie B</label>
     </div>
-    <router-link v-for="item in generalSuggestions" :key="item.title" to="/shop" class="card mb-16-p-16">
-      <div class="flex center">
-        <div class="material-icons-round big-c-icon">{{ item.logo }}</div>
+    <div class="grid-1-2 gap-16">
+      <router-link v-for="(item, i) in items" :key="i" to="/shop" class="card p-16 flex center">
+        <div class="material-icons-round big-c-icon">storefront</div>
         <div>
           <h2 class="m-0">{{ item.title }}</h2>
-          <p>{{ item.summary }}</p>
+          <p>{{ item.city }}</p>
         </div>
-      </div>
-    </router-link>
+      </router-link>
+    </div>
   </page>`,
   components: {
       Page
+  },
+  methods: {
+    filtered() {
+      let list = JSON.parse(JSON.stringify(DataHelper.combinedData()))
+      return list.filter(a => a.title.toUpperCase().includes(this.searchString.toUpperCase()))
+    },
+    sort() {
+      let list = this.filtered()
+      //TODO: Categories
+      list.sort((a, b) => a.title.localeCompare(b.title))
+      this.items = list
+    }
+  },
+  created() {
+    this.sort()
   }
 }
