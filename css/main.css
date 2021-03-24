@@ -495,6 +495,9 @@ h2 > .c-icon {
 .mt-0 {
   margin-top: 0;
 }
+.mt-8 {
+  margin-top: 8;
+}
 .mt-16 {
   margin-top: 16px;
 }
@@ -692,6 +695,21 @@ main.large-app-bar {
 /* food */
 .card.food {
   height: 96px;
+}
+
+/* big card */
+.card.big img {
+  border-radius: var(--border-radius-2x);
+  width: 100%;
+  max-height: 192px;
+  object-fit: cover;
+}
+.card.big .card-content {
+  padding: 16px;
+}
+.card.big h2, .card.big p {
+  font-size: 16px;
+  margin: 0;
 }
 
 /* account */

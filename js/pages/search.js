@@ -1,6 +1,6 @@
 import Page from '../components/page.js'
 
-//import DataHelper from '../helpers/data.js'
+import DataHelper from '../helpers/data.js'
 
 //TODO: Add content
 
@@ -10,7 +10,7 @@ export default {
     return {
       title: 'Suche',
       searchString: '',
-      sorting: 'a',
+      sorting: '',
       items: []
     }
   },
@@ -22,16 +22,26 @@ export default {
   `<page :title="title" parent="/explore">
     <input v-model="searchString" class="card mb-16" type="text" placeholder="Suchen" autocomplete="off">
     <div class="mb-16">
-      <input type="radio" id="categoryA" value="a" v-model="sorting">
-      <label class="mr-8" for="categoryA">Kategorie A</label>
-      <input type="radio" id="categoryB" value="b" v-model="sorting">
-      <label for="categoryB">Kategorie B</label>
+      <input type="radio" id="categoryA" value="" v-model="sorting">
+      <label class="mt-8 mr-8" for="categoryA">Alle</label>
+      <input type="radio" id="categoryB" value="au" v-model="sorting">
+      <label class="mt-8 mr-8" for="categoryB">Au</label>
+      <input type="radio" id="categoryC" value="bietigheim" v-model="sorting">
+      <label class="mt-8 mr-8" for="categoryC">Bietigheim</label>
+      <input type="radio" id="categoryD" value="durmersheim" v-model="sorting">
+      <label class="mt-8 mr-8" for="categoryD">Durmersheim</label>
+      <input type="radio" id="categoryE" value="elchesheim" v-model="sorting">
+      <label class="mt-8 mr-8" for="categoryE">Elchesheim-Illingen</label>
+      <input type="radio" id="categoryF" value="muggensturm" v-model="sorting">
+      <label class="mt-8 mr-8" for="categoryF">Muggensturm</label>
+      <input type="radio" id="categoryG" value="steinmauern" v-model="sorting">
+      <label class="mt-8 mr-8" for="categoryG">Steinmauern</label>
     </div>
-    <div class="grid-1-2 gap-16">
-      <router-link v-for="(item, i) in items" :key="i" to="/shop" class="card p-16 flex center">
-        <div class="material-icons-round big-c-icon">storefront</div>
-        <div>
-          <h2 class="m-0">{{ item.title }}</h2>
+    <div class="grid-1-3 gap-16">
+      <router-link v-for="(item, i) in items" :key="i" to="/shop" class="card big">
+        <img src="./images/placeholders/1.jpg" alt="Vorschau">
+        <div class="card-content">
+          <h2>{{ item.title }}</h2>
           <p>{{ item.city }}</p>
         </div>
       </router-link>
@@ -46,10 +56,9 @@ export default {
       return list.filter(a => a.title.toUpperCase().includes(this.searchString.toUpperCase()))
     },
     sort() {
-      let list = this.filtered()
-      //TODO: Categories
-      list.sort((a, b) => a.title.localeCompare(b.title))
-      this.items = list
+      this.items = this.filtered()
+        .filter(a => a.city?.toUpperCase()?.includes(this.sorting.toUpperCase()))
+        .sort((a, b) => a.title.localeCompare(b.title))
     }
   },
   created() {
